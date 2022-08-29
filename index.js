@@ -17,28 +17,46 @@ allNotes: function(){
     alert("Una Semifusa sonaria TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA TA"+" "+" "+ "1/64 tiempos");   
                     }
               }
-
-
+var finish = false;
+var answers ={
+    correctas: 1,
+    incorrectas: 1,
+             }
+var sum = +0;
+do {
 Notes.allNotes();
 function question(){
-if (prompt("cuantas corcheas entran en una redonda (1 tiempo)") ==8){
+if (prompt("cuantas corcheas entran en una redonda (1 tiempo)")==8){
     alert("Bien Hecho")
+for (let key in answers) {
+  sum += answers.correctas;
+                         }
+    alert(sum +  " "+ "Correcta"); 
     question2();
 }
 else {
-let respuesta = (prompt("Te equivocaste. Quieres repasar el contenido?")=="si");
+let respuesta = prompt("Te equivocaste. Quieres repasar el contenido?");
+if (respuesta=="si"){
+    for (let key in answers) {
+        sum += answers[key];
+      }
+          alert(sum  +" "+ "incorrectas");
     Notes.allNotes();
-    question();
-} if (respuesta== "no"){
+question();
+}else if (respuesta== "no"){
     question()
                        }
      }
-
+    }
 question();
  
 function question2(){
 if (prompt("Que valor tiene una semifusa con respecto a una redonda?")==64){
     alert("Muy Bien")
+    for (let key in answers) {
+        sum += answers[key];
+      }
+          alert(sum  +" "+ "Correcta"); 
     question3();
 }
 else {
@@ -53,18 +71,27 @@ else if (respuesta=="no"){
      }
 }
 function question3() {
-    let pregunta3 = 2;
-    while (pregunta3 = prompt("Que valor tienen dos redondas ?")==2);
-    alert("Te estas conviertiendo en músico");
     
-    while (pregunta3 !== 2) {
-        let respuesta3 = prompt("Te equivocaste. Quieres volver a repasar el contenido?");
-                            }
-    
-    if (respuesta3 == "si") {
-        sonido();
-        question3();
-                            }
-                     }
-                    
+if (pregunta3 = prompt("Que valor tienen dos redondas ?")==2){
+    alert("Te estas conviertiendo en músico")
+    for (let key in answers) {
+        sum += answers[key];
+      }
+          alert(sum  +" "+ "Correcta");
+}
 
+else{
+    var respuesta3 = prompt("Te equivocaste. Quieres volver a repasar el contenido?");
+if(respuesta3== "si"){
+    Notes.allNotes();
+    question3();
+}
+
+
+}   
+}
+}
+while(finish)   
+    
+                       
+    
