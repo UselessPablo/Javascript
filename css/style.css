@@ -10,24 +10,41 @@ h1 {
   font-family: 'maven pro';
 }
 section {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  justify-content: center;
+  flex-direction: column; 
 }
 button {
-  border-style: none;
+  border-style: solid 1px;
+  border-color: rgb(64, 191, 207);
   background-color: rgb(11, 107, 131);
-  border-radius: 1.6rem;
+  border-radius: 1.9rem;
   box-shadow: 4px 4px rgba(20, 152, 161, 0.801);
   font-family: 'maven Pro';
   font-weight: bold;
   padding-bottom: 10px;
   padding-top: 5px;
   padding-right: 15px;
+  margin-bottom: 10px;
+  padding-left: 15px;  
 }
 img {
   margin: 3px;
+  display: flex;
+  margin-left: 92px;
 }
 button:hover {
   background-color: rgb(73, 144, 185);
   cursor: pointer;
+}
+.container{
+    display: flex;
+    background-color: rgb(71, 169, 199);
+    width: 300px;
+    justify-content: center;
+    border-radius: 2rem;
+    align-items: center;
+    height: 300px;
+    margin-left: 38%;
+    box-shadow: 7px 7px rgb(12, 107, 107);
 }
